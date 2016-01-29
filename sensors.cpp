@@ -64,7 +64,6 @@ static struct sensor_t sSensorList[] = {
 		.minDelay   = 20000,
 		.fifoReservedEventCount = 0,
 		.fifoMaxEventCount = 32,
-		.reserved   = {0,}
 	},
 };
 
