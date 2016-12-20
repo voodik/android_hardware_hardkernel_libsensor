@@ -53,7 +53,7 @@
 
 static struct sensor_t sSensorList[] = {
 	{
-		.name       = "Odroid-USBIO Accelermeter Sensor",
+		.name       = "Odroid-USBIO Accelerometer Sensor",
 		.vendor     = "Hardkernel",
 		.version    = 1,
 		.handle     = SENSORS_ACCELERATION_HANDLE,
