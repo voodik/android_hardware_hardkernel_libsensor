@@ -23,6 +23,8 @@
 #include <sys/types.h>
 
 #include <linux/input.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include <cutils/log.h>
 

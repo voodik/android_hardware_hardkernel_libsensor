@@ -22,6 +22,7 @@
 #include <poll.h>
 #include <pthread.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include <linux/input.h>
 
@@ -64,7 +65,11 @@ static struct sensor_t sSensorList[] = {
 		.minDelay   = 20000,
 		.fifoReservedEventCount = 0,
 		.fifoMaxEventCount = 32,
-		.reserved   = {0,}
+		.stringType = SENSOR_STRING_TYPE_ACCELEROMETER,
+		.requiredPermission = "",
+		.maxDelay = 0,
+		.flags = SENSOR_FLAG_CONTINUOUS_MODE,
+		.reserved   = {0}
 	},
 };
 
@@ -92,10 +97,11 @@ struct sensors_module_t HAL_MODULE_INFO_SYM = {
 		name: "Hardkernel Sensor module",
 		author: "Hardkernel Co,. Ltd",
 		methods: &sensors_module_methods,
-		dso: NULL,
-		reserved: {0, }
+		dso: nullptr,
+		reserved: {0}
 	},
 	get_sensors_list: sensors__get_sensors_list,
+        set_operation_mode: nullptr
 };
 
 struct sensors_poll_context_t {
